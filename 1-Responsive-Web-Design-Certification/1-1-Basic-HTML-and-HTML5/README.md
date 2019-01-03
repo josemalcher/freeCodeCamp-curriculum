@@ -553,7 +553,42 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte17">17 - Create an Ordered List</a>
 
+HTML has another special element for creating ordered lists, or numbered lists.
 
+Ordered lists start with an opening <ol> element, followed by any number of <li> elements. Finally, ordered lists close with a </ol>
+
+For example:
+
+<ol>
+  <li>Garfield</li>
+  <li>Sylvester</li>
+</ol>
+would create a numbered list of "Garfield" and "Sylvester".
+
+Create an ordered list of the top 3 things cats hate the most.
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>Dog</li>
+    <li>water</li>
+    <li>python</li>
+  </ol>
+  
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -562,7 +597,42 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte18">18 - Create a Text Field</a>
 
+Now let's create a web form.
 
+Input elements are a convenient way to get input from your user.
+
+You can create a text input like this:
+
+<input type="text">
+
+Note that input elements are self-closing.
+
+Create an input element of type text below your lists.
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  
+  <input type="text">
+  
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -571,6 +641,37 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte19">19 - Add Placeholder Text to a Text Field</a>
 
+Placeholder text is what is displayed in your input element before your user has inputted anything.
+
+You can create placeholder text like so:
+
+<input type="text" placeholder="this is placeholder text">
+
+
+Set the placeholder value of your text input to "cat photo URL".
+
+```
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <input type="text" placeholder="cat photo URL">
+</main>
+```
 
 
 [Voltar ao Índice](#indice)
@@ -580,6 +681,41 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte20">20 - Create a Form Element</a>
 
+You can build web forms that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an action on your form element.
+
+For example:
+
+<form action="/url-where-you-want-to-submit-form-data"></form>
+
+
+Nest your text field inside a form element, and add the action="/submit-cat-photo" attribute to the form element.
+
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="/submit-cat-photo">
+    <input type="text" placeholder="cat photo URL">
+  </form>
+  
+</main>
+```
 
 
 [Voltar ao Índice](#indice)
@@ -589,7 +725,39 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte21">21 - Add a Submit Button to a Form</a>
 
+Let's add a submit button to your form. Clicking this button will send the data from your form to the URL you specified with your form's action attribute.
 
+Here's an example submit button:
+
+<button type="submit">this button submits the form</button>
+
+Add a button as the last element of your form element with a type of submit, and "Submit" as its text.
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="/submit-cat-photo">
+    <input type="text" placeholder="cat photo URL">
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -598,7 +766,40 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte22">22 - Use HTML5 to Require a Field</a>
 
+You can require specific form fields so that your user will not be able to submit your form until he or she has filled them out.
 
+For example, if you wanted to make a text input field required, you can just add the attribute required within your input element, like this: <input type="text" required>
+
+
+Make your text input a required field, so that your user can't submit the form without completing this field.
+
+Then try to submit the form without inputting any text. See how your HTML5 form notifies you that the field is required?
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="/submit-cat-photo">
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -607,7 +808,60 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte23">23 - Create a Set of Radio Buttons</a>
 
+You can use radio buttons for questions where you want the user to only give you one answer out of multiple options.
 
+Radio buttons are a type of input.
+
+Each of your radio buttons can be nested within its own label element. By wrapping an input element inside of a label element it will automatically associate the radio button input with the label element surrounding it.
+
+All related radio buttons should have the same name attribute to create a radio button group. By creating a radio group, selecting any single radio button will automatically deselect the other buttons within the same group ensuring only one answer is provided by the user.
+
+Here's an example of a radio button:
+
+<label> 
+  <input type="radio" name="indoor-outdoor">Indoor 
+</label>
+It is considered best practice to set a for attribute on the label element, with a value that matches the value of the id attribute of the input element. This allows assistive technologies to create a linked relationship between the label and the child input element. For example:
+
+<label for="indoor"> 
+  <input id="indoor" type="radio" name="indoor-outdoor">Indoor 
+</label>
+
+Add a pair of radio buttons to your form, each nested in its own label element. One should have the option of indoor and the other should have the option of outdoor. Both should share the name attribute of indoor-outdoor to create a radio group.
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="/submit-cat-photo">
+
+<label for="indoor"> 
+  <input id="indoor" type="radio" name="indoor-outdoor">Indoor 
+</label>
+<label for="outdoor"> 
+  <input id="outdoor" type="radio" name="indoor-outdoor">outdoor 
+</label>
+
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -616,7 +870,61 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte24">24 - Create a Set of Checkboxes</a>
 
+Forms commonly use checkboxes for questions that may have more than one answer.
 
+Checkboxes are a type of input
+
+Each of your checkboxes can be nested within its own label element. By wrapping an input element inside of a label element it will automatically associate the checkbox input with the label element surrounding it.
+
+All related checkbox inputs should have the same name attribute.
+
+It is considered best practice to explicitly define the relationship between a checkbox input and its corresponding label by setting the for attribute on the label element to match the id attribute of the associated input element.
+
+Here's an example of a checkbox:
+
+<label for="loving"><input id="loving" type="checkbox" name="personality"> Loving</label>
+
+
+Add to your form a set of three checkboxes. Each checkbox should be nested within its own label element. All three should share the name attribute of personality.
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="/submit-cat-photo">
+    <label for="indoor"><input id="indoor" type="radio" name="indoor-outdoor"> Indoor</label>
+    <label for="outdoor"><input id="outdoor" type="radio" name="indoor-outdoor"> Outdoor</label><br>
+
+<label for="loving">
+  <input id="loving" type="checkbox" name="personality"> Loving
+</label>
+<label for="hate">
+  <input id="hate" type="checkbox" name="personality"> Loving
+</label>
+<label for="indiferent">
+  <input id="indiferent" type="checkbox" name="personality"> Loving
+</label>
+
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -625,7 +933,45 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte25">25 - Check Radio Buttons and Checkboxes by Default</a>
 
+You can set a checkbox or radio button to be checked by default using the checked attribute.
 
+To do this, just add the word "checked" to the inside of an input element. For example:
+
+<input type="radio" name="test-name" checked>
+
+
+Set the first of your radio buttons and the first of your checkboxes to both be checked by default.
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <form action="/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -634,7 +980,50 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte26">26 - Nest Many Elements within a Single div Element</a>
 
+The div element, also known as a division element, is a general purpose container for other elements.
 
+The div element is probably the most commonly used HTML element of all.
+
+Just like any other non-self-closing element, you can open a div element with <div> and close it on another line with </div>.
+
+
+Nest your "Things cats love" and "Things cats hate" lists all within a single div element.
+
+Hint: Try putting your opening div tag above your "Things cats love" p element and your closing div tag after your closing ol tag so that both of your lists are within one div.
+
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+  </div>
+  <div>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+  <form action="/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -643,7 +1032,31 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte27">27 - Declare the Doctype of an HTML Document</a>
 
+The challenges so far have covered specific HTML elements and their uses. However, there are a few elements that give overall structure to your page, and should be included in every HTML document.
 
+At the top of your document, you need to tell the browser which version of HTML your page is using. HTML is an evolving language, and is updated regularly. Most major browsers support the latest specification, which is HTML5. However, older web pages may use previous versions of the language.
+
+You tell the browser this information by adding the <!DOCTYPE ...> tag on the first line, where the "..." part is the version of HTML. For HTML5, you use <!DOCTYPE html>.
+
+The ! and uppercase DOCTYPE is important, especially for older browsers. The html is not case sensitive.
+
+Next, the rest of your HTML code needs to be wrapped in html tags. The opening <html> goes directly below the <!DOCTYPE html> line, and the closing </html> goes at the end of the page.
+
+Here's an example of the page structure:
+
+<!DOCTYPE html>
+<html>
+  <!-- Your HTML code goes here -->
+</html>
+
+Add a DOCTYPE tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing html tags, which wrap around an h1 element. The heading can include any text.
+
+```html
+<!DOCTYPE html>
+<html>
+  <h1>Hello!</h1>
+</html>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -652,7 +1065,36 @@ Remove the last two p elements and create an unordered list of three things that
 
 ## <a name="parte28">28 - Define the Head and Body of an HTML Document</a>
 
+You can add another level of organization in your HTML document within the html tags with the head and body elements. Any markup with information about your page would go into the head tag. Then any markup with the content of the page (what displays for a user) would go into the body tag.
 
+Metadata elements, such as link, meta, title, and style, typically go inside the head element.
+
+Here's an example of a page's layout:
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- metadata elements -->
+  </head>
+  <body>
+    <!-- page contents -->
+  </body>
+</html>
+
+Edit the markup so there's a head and a body. The head element should only include the title, and the body element should only include the h1 and p.
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The best page ever</title>
+    </head>
+    <body>
+    <h1>The best page ever</h1>
+    <p>Cat ipsum dolor sit amet, jump launch to pounce upon little yarn mouse, bare fangs at toy run hide in litter box until treats are fed. Go into a room to decide you didn't want to be in there anyway. I like big cats and i can not lie kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff. Meow i could pee on this if i had the energy for slap owner's face at 5am until human fills food dish yet scamper. Knock dish off table head butt cant eat out of my own dish scratch the furniture. Make meme, make cute face. Sleep in the bathroom sink chase laser but pee in the shoe. Paw at your fat belly licks your face and eat grass, throw it back up kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  </body>
+</html>  
+```
 
 [Voltar ao Índice](#indice)
 
