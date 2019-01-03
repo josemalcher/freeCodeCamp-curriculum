@@ -1,7 +1,7 @@
 # Responsive Web Design Certification
 
 1. [Basic HTML and HTML5](1-1-Basic-HTML-and-HTML5)
-2. Basic CSS
+2. [Basic CSS](1-2-Basic-CSS)
 3. Applied Visual Design
 4. Applied Accessibility
 5. Responsive Web Design Principles
