@@ -55,7 +55,54 @@ Cascading Style Sheets (CSS) tell the browser how to display the text and other 
 
 ## <a name="parte1">1 - Change the Color of Text</a>
 
+Now let's change the color of some of our text.
 
+We can do this by changing the style of your h2 element.
+
+The property that is responsible for the color of an element's text is the color style property.
+
+Here's how you would set your h2 element's text color to blue:
+
+<h2 style="color: blue;">CatPhotoApp</h2>
+
+Note that it is a good practice to end inline style declarations with a ; .
+
+
+Change your h2 element's style so that its text color is red.
+
+```html
+<h2 style="color: red;">CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+  
+  <form action="/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -64,7 +111,69 @@ Cascading Style Sheets (CSS) tell the browser how to display the text and other 
 
 ## <a name="parte2">2 - Use CSS Selectors to Style Elements</a>
 
+With CSS, there are hundreds of CSS properties that you can use to change the way an element looks on your page.
 
+When you entered <h2 style="color: red">CatPhotoApp</h2>, you were styling that individual h2 element with inline CSS, which stands for Cascading Style Sheets.
+
+That's one way to specify the style of an element, but there's a better way to apply CSS.
+
+At the top of your code, create a style block like this:
+
+```html
+<style>
+</style>
+```
+
+Inside that style block, you can create a CSS selector for all h2 elements. For example, if you wanted all h2 elements to be red, you would add a style rule that looks like this:
+
+```html
+<style>
+  h2 {color: red;}
+</style>
+```
+
+Note that it's important to have both opening and closing curly braces ({ and }) around each element's style rule(s). You also need to make sure that your element's style definition is between the opening and closing style tags. Finally, be sure to add a semicolon to the end of each of your element's style rules.
+
+Delete your h2 element's style attribute, and instead create a CSS style block. Add the necessary CSS to turn all h2 elements blue.
+
+```html
+<style>
+  h2{
+    color:blue;
+  }
+</style>
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+  
+  <form action="/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -73,7 +182,72 @@ Cascading Style Sheets (CSS) tell the browser how to display the text and other 
 
 ## <a name="parte3">3 - Use a CSS Class to Style an Element</a>
 
+Classes are reusable styles that can be added to HTML elements.
 
+Here's an example CSS class declaration:
+
+```html
+<style>
+  .blue-text {
+    color: blue;
+  }
+</style>
+```
+
+You can see that we've created a CSS class called blue-text within the <style> tag.
+
+You can apply a class to an HTML element like this:
+
+```html
+<h2 class="blue-text">CatPhotoApp</h2>
+```
+
+Note that in your CSS style element, class names start with a period. In your HTML elements' class attribute, the class name does not include the period.
+
+
+Inside your style element, change the h2 selector to .red-text and update the color's value from blue to red.
+
+Give your h2 element the class attribute with a value of 'red-text'.
+
+```html
+<style>
+  .red-text{
+    color: red;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+  
+  <form action="/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -82,7 +256,50 @@ Cascading Style Sheets (CSS) tell the browser how to display the text and other 
 
 ## <a name="parte4">4 - Style Multiple Elements with a CSS Class</a>
 
+Classes allow you to use the same CSS styles on multiple HTML elements. You can see this by applying your red-text class to the first p element.
 
+```html
+<style>
+  .red-text {
+    color: red;
+  }
+  .red-text{
+
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+  
+  <form action="/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -91,7 +308,58 @@ Cascading Style Sheets (CSS) tell the browser how to display the text and other 
 
 ## <a name="parte5">5 - Change the Font Size of an Element</a>
 
+Font size is controlled by the font-size CSS property, like this:
 
+```css
+h1 {
+  font-size: 30px;
+}
+```
+
+Inside the same <style> tag that contains your red-text class, create an entry for p elements and set the font-size to 16 pixels (16px).
+
+```html
+<style>
+  .red-text {
+    color: red;
+  }
+  p{
+    font-size: 16px;
+  }
+</style>
+
+<h2 class="red-text">CatPhotoApp</h2>
+<main>
+  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <div>
+    <p>Things cats love:</p>
+    <ul>
+      <li>cat nip</li>
+      <li>laser pointers</li>
+      <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+      <li>flea treatment</li>
+      <li>thunder</li>
+      <li>other cats</li>
+    </ol>
+  </div>
+  
+  <form action="/submit-cat-photo">
+    <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
+    <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>
+    <label><input type="checkbox" name="personality" checked> Loving</label>
+    <label><input type="checkbox" name="personality"> Lazy</label>
+    <label><input type="checkbox" name="personality"> Energetic</label><br>
+    <input type="text" placeholder="cat photo URL" required>
+    <button type="submit">Submit</button>
+  </form>
+</main>
+```
 
 [Voltar ao Índice](#indice)
 
