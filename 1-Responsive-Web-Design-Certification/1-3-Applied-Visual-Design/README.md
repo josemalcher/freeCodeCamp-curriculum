@@ -1388,7 +1388,51 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte28">28 - Adjust the Color of Various Elements to Complementary Colors</a>
 
+The Complementary Colors challenge showed that opposite colors on the color wheel can make each other appear more vibrant when placed side-by-side. However, the strong visual contrast can be jarring if it's overused on a website, and can sometimes make text harder to read if it's placed on a complementary-colored background. In practice, one of the colors is usually dominant and the complement is used to bring visual attention to certain content on the page.
 
+
+This page will use a shade of teal (#09A7A1) as the dominant color, and its orange (#FF790E) complement to visually highlight the sign-up buttons. Change the background-color of both the header and footer from black to the teal color. Then change the h2 text color to teal as well. Finally, change the background-color of the button to the orange color.
+
+```html
+<style>
+  body {
+    background-color: white;
+  }
+  header {
+    background-color: #09A7A1;
+    color: white;
+    padding: 0.25em;
+  }
+  h2 {
+    color: #09A7A1;
+  }  
+  button {
+    background-color: #FF790E;
+  }
+  footer {
+    background-color: #09A7A1;
+    color: white;
+    padding: 0.5em;
+  }
+</style>
+<header>
+  <h1>Cooking with FCC!</h1>
+</header>
+<main>
+  <article>
+    <h2>Machine Learning in the Kitchen</h2>
+    <p>Join this two day workshop that walks through how to implement cutting-edge snack-getting algorithms with a command line interface. Coding usually involves writing exact instructions, but sometimes you need your computer to execute flexible commands, like <code>fetch Pringles</code>.</p>
+    <button>Sign Up</button>
+  </article>
+  <article>
+    <h2>Bisection Vegetable Chopping</h2>
+    <p>This week-long retreat will level-up your coding ninja skills to actual ninja skills. No longer is the humble bisection search limited to sorted arrays or coding interview questions, applying its concepts in the kitchen will have you chopping carrots in O(log n) time before you know it.</p>
+    <button>Sign Up</button>
+  </article>
+</main>
+<br>
+<footer>&copy; 2018 FCC Kitchen</footer>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1397,7 +1441,57 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte29">29 - Adjust the Hue of a Color</a>
 
+Colors have several characteristics including hue, saturation, and lightness. CSS3 introduced the hsl() property as an alternative way to pick a color by directly stating these characteristics.
 
+Hue is what people generally think of as 'color'. If you picture a spectrum of colors starting with red on the left, moving through green in the middle, and blue on right, the hue is where a color fits along this line. In hsl(), hue uses a color wheel concept instead of the spectrum, where the angle of the color on the circle is given as a value between 0 and 360.
+
+Saturation is the amount of gray in a color. A fully saturated color has no gray in it, and a minimally saturated color is almost completely gray. This is given as a percentage with 100% being fully saturated.
+
+Lightness is the amount of white or black in a color. A percentage is given ranging from 0% (black) to 100% (white), where 50% is the normal color.
+
+Here are a few examples of using hsl() with fully-saturated, normal lightness colors:
+
+| Color  | HSL  |
+|---|---|
+| red  |  hsl(0, 100%, 50%) |
+| yellow |  hsl(60, 100%, 50%) |
+| green  | hsl(120, 100%, 50%)  |
+| cyan  | hsl(180, 100%, 50%)  |
+| blue  | hsl(240, 100%, 50%)  |
+| magenta  | hsl(300, 100%, 50%)  |
+
+Change the background-color of each div element based on the class names (green, cyan, or blue) using hsl(). All three should have full saturation and normal lightness.
+
+
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+  
+  .green {
+    background-color: hsl(120, 100%, 50%);
+  }
+  
+  .cyan {
+    background-color: hsl(180, 100%, 50%);
+  }
+  
+  .blue {
+    background-color: hsl(240, 100%, 50%);
+  }
+  
+  div {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+  
+<div class="green"></div>
+<div class="cyan"></div>
+<div class="blue"></div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1406,7 +1500,54 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte30">30 - Adjust the Tone of a Color</a>
 
+The hsl() option in CSS also makes it easy to adjust the tone of a color. Mixing white with a pure hue creates a tint of that color, and adding black will make a shade. Alternatively, a tone is produced by adding gray or by both tinting and shading. Recall that the 's' and 'l' of hsl() stand for saturation and lightness, respectively. The saturation percent changes the amount of gray and the lightness percent determines how much white or black is in the color. This is useful when you have a base hue you like, but need different variations of it.
 
+
+The navigation bar on this site currently inherits its background-color from the header element. Starting with that color as a base, add a background-color to the nav element so it uses the same cyan hue, but has 80% saturation and 25% lightness values to change its tone and shade.
+
+```html
+<style>
+  header {
+    background-color: hsl(180, 90%, 35%);
+    color: #FFFFFF;
+  }
+  
+  nav {
+  background-color:hsl(180, 80%, 25%);
+  }
+  
+  h1 {
+    text-indent: 10px;
+    padding-top: 10px;
+  }
+  
+  nav ul {
+    margin: 0px;
+    padding: 5px 0px 5px 30px;
+  }
+  
+  nav li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+  
+<header>
+  <h1>Cooking with FCC!</h1>
+  <nav>
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Classes</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1415,7 +1556,40 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte31">31 - Create a Gradual CSS Linear Gradient</a>
 
+Applying a color on HTML elements is not limited to one flat hue. CSS provides the ability to use color transitions, otherwise known as gradients, on elements. This is accessed through the background property's linear-gradient() function. Here is the general syntax:
 
+```css
+    background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);
+```
+
+The first argument specifies the direction from which color transition starts - it can be stated as a degree, where 90deg makes a vertical gradient and 45deg is angled like a backslash. The following arguments specify the order of colors used in the gradient.
+
+Example:
+
+```css
+    background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
+```
+
+Use a linear-gradient() for the div element's background, and set it from a direction of 35 degrees to change the color from #CCFFFF to #FFCCCC.
+
+Note  
+While there are other ways to specify a color value, like rgb() or hsl(), use hex values for this challenge.
+
+```html
+<style>
+
+  div{ 
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin: 50px auto;
+    background: linear-gradient(35deg, #CCFFFF, #FFCCCC);
+  }
+
+</style>
+
+<div></div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1424,7 +1598,44 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte32">32 - Use a CSS Linear Gradient to Create a Striped Element</a>
 
+The repeating-linear-gradient() function is very similar to linear-gradient() with the major difference that it repeats the specified gradient pattern. repeating-linear-gradient() accepts a variety of values, but for simplicity, you'll work with an angle value and color stop values in this challenge.
 
+The angle value is the direction of the gradient. Color stops are like width values that mark where a transition takes place, and are given with a percentage or a number of pixels.
+
+In the example demonstrated in the code editor, the gradient starts with the color yellow at 0 pixels which blends into the second color blue at 40 pixels away from the start. Since the next color stop is also at 40 pixels, the gradient immediately changes to the third color green, which itself blends into the fourth color value red as that is 80 pixels away from the beginning of the gradient.
+
+For this example, it helps to think about the color stops as pairs where every two colors blend together.
+
+```css
+    0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px
+```
+
+If every two color stop values are the same color, the blending isn't noticeable because it's between the same color, followed by a hard transition to the next color, so you end up with stripes.
+
+
+Make stripes by changing the repeating-linear-gradient() to use a gradient angle of 45deg, then set the first two color stops to yellow, and finally the second two color stops to black.
+
+```html
+ <style>
+ 
+   div{ 
+     border-radius: 20px;
+     width: 70%;
+     height: 400px;
+     margin:  50 auto;
+     background: repeating-linear-gradient(
+       45deg,
+       yellow 0px,
+       yellow 40px,
+       black 40px,
+       black 80px
+     );
+   }
+ 
+ </style>
+ 
+ <div></div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1433,7 +1644,18 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte33">33 - Create Texture by Adding a Subtle Pattern as a Background Image</a>
 
+One way to add texture and interest to a background and have it stand out more is to add a subtle pattern. The key is balance, as you don't want the background to stand out too much, and take away from the foreground. The background property supports the url() function in order to link to an image of the chosen texture or pattern. The link address is wrapped in quotes inside the parentheses.
 
+
+Using the url of https://i.imgur.com/MJAkxbh.png, set the background of the whole page with the body selector.
+
+```html
+<style>
+  body {
+    background: url(https://i.imgur.com/MJAkxbh.png);
+  }
+</style>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1442,7 +1664,44 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte34">34 - Use the CSS Transform scale Property to Change the Size of an Element</a>
 
+To change the scale of an element, CSS has the transform property, along with its scale() function. The following code example doubles the size of all the paragraph elements on the page:
 
+```css
+    p {
+      transform:scale(2);
+    }
+```
+
+Increase the size of the element with the id of ball2 to 1.5 times its original size.
+
+```html
+<style>
+  .ball { 
+    width: 40px;
+    height: 40px;
+    margin: 50 auto;
+    position: fixed;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    border-radius: 50%;
+  }
+  #ball1 {
+    left: 20%;
+  }
+  #ball2 {
+    left: 65%;
+    transform:scale(1.5);
+  }
+
+
+</style>
+
+<div class="ball" id= "ball1"></div>
+<div class="ball" id= "ball2"></div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1451,7 +1710,39 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte35">35 - Use the CSS Transform scale Property to Scale an Element on Hover</a>
 
+The transform property has a variety of functions that lets you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as :hover that specify a certain state of an element, the transform property can easily add interactivity to your elements.
 
+Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:
+
+```css
+    p:hover {
+      transform: scale(2.1);
+    }
+```
+
+Add a CSS rule for the hover state of the div and use the transform property to scale the div element to 1.1 times its original size when a user hovers over it.
+
+```html
+<style>
+  div { 
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+    background: linear-gradient(
+      53deg,
+      #ccfffc,
+      #ffcccf
+    );
+  }
+  div:hover{
+    transform: scale(1.1);
+  }
+  
+  
+</style>
+
+<div></div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1460,7 +1751,37 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte36">36 - Use the CSS Transform Property skewX to Skew an Element Along the X-Axis</a>
 
+The next function of the transform property is skewX(), which skews the selected element along its X (horizontal) axis by a given degree.
 
+The following code skews the paragraph element by -32 degrees along the X-axis.
+
+```css
+    p {
+      transform: skewX(-32deg);
+    }
+```
+
+Skew the element with the id of bottom by 24 degrees along the X-axis by using the transform property.
+
+```html
+<style>
+  div { 
+    width: 70%;
+    height: 100px;
+    margin:  50px auto;
+  }
+  #top {
+    background-color: red;
+  }
+  #bottom {
+    background-color: blue;
+    transform: skewX(24deg);
+  }
+</style>
+
+<div id="top"></div>
+<div id="bottom"></div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1469,7 +1790,31 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte37">37 - Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis</a>
 
+Given that the skewX() function skews the selected element along the X-axis by a given degree, it is no surprise that the skewY() property skews an element along the Y (vertical) axis.
 
+
+Skew the element with the id of top -10 degrees along the Y-axis by using the transform property.
+
+```html
+<style>
+  div { 
+    width: 70%;
+    height: 100px;
+    margin: 50px auto;
+  }
+  #top {
+    background-color: red;
+    transform: skewY(-10deg);
+  }
+  #bottom {
+    background-color: blue;
+    transform: skewX(24deg);
+  }
+</style>
+
+<div id="top"></div>
+<div id="bottom"></div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1478,7 +1823,38 @@ Change the background-color property of the orange, cyan, and raspberry classes 
 
 ## <a name="parte38">38 - Create a Graphic Using CSS</a>
 
+By manipulating different selectors and properties, you can make interesting shapes. One of the easier ones to try is a crescent moon shape. For this challenge you need to work with the box-shadow property that sets the shadow of an element, along with the border-radius property that controls the roundness of the element's corners.
 
+You will create a round, transparent object with a crisp shadow that is slightly offset to the side - the shadow is actually going to be the moon shape you see.
+
+In order to create a round object, the border-radius property should be set to a value of 50%.
+
+You may recall from an earlier challenge that the box-shadow property takes values for offset-x, offset-y, blur-radius, spread-radius and a color value in that order. The blur-radius and spread-radius values are optional.
+
+
+Manipulate the square element in the editor to create the moon shape. First, change the background-color to transparent, then set the border-radius property to 50% to make the circular shape. Finally, change the box-shadow property to set the offset-x to 25px, the offset-y to 10px, blur-radius to 0, spread-radius to 0, and color to blue.
+
+```html
+<style>
+.center
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 25px 10px 0px 0px blue; 
+}
+
+</style>
+<div class="center"></div>
+```
 
 [Voltar ao Índice](#indice)
 
