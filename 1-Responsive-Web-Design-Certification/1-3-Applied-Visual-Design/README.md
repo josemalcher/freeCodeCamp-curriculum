@@ -1173,6 +1173,43 @@ The navigation bar in the code is labeled with an id of navbar. Change its posit
 
 ## <a name="parte23">23 - Push Elements Left or Right with the float Property</a>
 
+The next positioning tool does not actually use position, but sets the float property of an element. Floating elements are removed from the normal flow of a document and pushed to either the left or right of their containing parent element. It's commonly used with the width property to specify how much horizontal space the floated element requires.
+
+
+The given markup would work well as a two-column layout, with the section and aside elements next to each other. Give the #left item a float of left and the #right item a float of right.
+
+```html
+<head>
+  <style>
+  #left {
+    float:left;
+    width: 50%;
+  }
+  #right {
+    float:right;
+    width: 40%;
+  }
+  aside, section {
+    padding: 2px;
+    background-color: #ccc;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome!</h1>
+  </header>
+  <section id="left">
+    <h2>Content</h2>
+    <p>Good stuff</p>
+  </section>
+  <aside id="right">
+    <h2>Sidebar</h2>
+    <p>Links</p>
+  </aside>
+</body>
+```
+
 
 
 [Voltar ao Índice](#indice)
@@ -1181,6 +1218,37 @@ The navigation bar in the code is labeled with an id of navbar. Change its posit
 
 
 ## <a name="parte24">24 - Change the Position of Overlapping Elements with the z-index Property</a>
+
+When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the z-index property can specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the z-index property of an element move it higher in the stack than those with lower values.
+
+
+Add a z-index property to the element with the class name of first (the red rectangle) and set it to a value of 2 so it covers the other element (blue rectangle).
+
+```html
+<style>
+  div {
+    width: 60%;
+    height: 200px;
+    margin-top: 20px;
+  }
+  
+  .first {
+    background-color: red;
+    position: absolute;
+    z-index:2;
+  }
+  .second {
+    background-color: blue;
+    position: absolute;
+    left: 40px;
+    top: 50px;
+    z-index: 1;
+  }
+</style>
+
+<div class="first"></div>
+<div class="second"></div>
+```
 
 
 
@@ -1191,7 +1259,24 @@ The navigation bar in the code is labeled with an id of navbar. Change its posit
 
 ## <a name="parte25">25 - Center an Element Horizontally Using the margin Property</a>
 
+Another positioning technique is to center a block element horizontally. One way to do this is to set its margin to a value of auto.
 
+This method works for images, too. Images are inline elements by default, but can be changed to block elements when you set the display property to block.
+
+
+Center the div on the page by adding a margin property with a value of auto.
+
+```html
+<style>
+  div {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+    margin:auto;
+  }
+</style>
+<div></div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -1200,16 +1285,101 @@ The navigation bar in the code is labeled with an id of navbar. Change its posit
 
 ## <a name="parte26">26 - Learn about Complementary Colors</a>
 
+Color theory and its impact on design is a deep topic and only the basics are covered in the following challenges. On a website, color can draw attention to content, evoke emotions, or create visual harmony. Using different combinations of colors can really change the look of a website, and a lot of thought can go into picking a color palette that works with your content.
 
+The color wheel is a useful tool to visualize how colors relate to each other - it's a circle where similar hues are neighbors and different hues are farther apart. When two colors are opposite each other on the wheel, they are called complementary colors. They have the characteristic that if they are combined, they "cancel" each other out and create a gray color. However, when placed side-by-side, these colors appear more vibrant and produce a strong visual contrast.
+
+Some examples of complementary colors with their hex codes are:
+
+```
+red (#FF0000) and cyan (#00FFFF)
+green (#00FF00) and magenta (#FF00FF)
+blue (#0000FF) and yellow (#FFFF00)
+```
+
+This is different than the outdated RYB color model that many of us were taught in school, which has different primary and complementary colors. Modern color theory uses the additive RGB model (like on a computer screen) and the subtractive CMY(K) model (like in printing). Read here for more information on this complex subject.
+
+There are many color picking tools available online that have an option to find the complement of a color.
+
+Note
+For all color challenges: Using color can be a powerful way to add visual interest to a page. However, color alone should not be used as the only way to convey important information because users with visual impairments may not understand that content. This issue will be covered in more detail in the Applied Accessibility challenges.
+
+
+Change the background-color property of the blue and yellow classes to their respective colors. Notice how the colors look different next to each other than they do compared against the white background.
+
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+  .blue {
+    background-color: #0000FF;
+  }
+  .yellow {
+    background-color: #FFFF00;
+  }
+  div {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+  }
+</style>
+<div class="blue"></div>
+<div class="yellow"></div>
+```
 
 [Voltar ao Índice](#indice)
 
 ---
 
-
 ## <a name="parte27">27 - Learn about Tertiary Colors</a>
 
+Computer monitors and device screens create different colors by combining amounts of red, green, and blue light. This is known as the RGB additive color model in modern color theory. Red (R), green (G), and blue (B) are called primary colors. Mixing two primary colors creates the secondary colors cyan (G + B), magenta (R + B) and yellow (R + G). You saw these colors in the Complementary Colors challenge. These secondary colors happen to be the complement to the primary color not used in their creation, and are opposite to that primary color on the color wheel. For example, magenta is made with red and blue, and is the complement to green.
 
+Tertiary colors are the result of combining a primary color with one of its secondary color neighbors. For example, red (primary) and yellow (secondary) make orange. This adds six more colors to a simple color wheel for a total of twelve.
+
+There are various methods of selecting different colors that result in a harmonious combination in design. One example that can use tertiary colors is called the split-complementary color scheme. This scheme starts with a base color, then pairs it with the two colors that are adjacent to its complement. The three colors provide strong visual contrast in a design, but are more subtle than using two complementary colors.
+
+Here are three colors created using the split-complement scheme:
+
+| Color |  Hex Code  |
+|---|---|
+| orange | #FF7D00  |
+| cyan  |  #00FFFF |
+| raspberry  |  #FF007D |
+
+
+Change the background-color property of the orange, cyan, and raspberry classes to their respective colors. Make sure to use the hex codes as orange and raspberry are not browser-recognized color names.
+
+```html
+<style>
+  body {
+    background-color: #FFFFFF;
+  }
+  
+  .orange {
+    background-color: #FF7D00;
+  }
+  
+  .cyan {
+    background-color: #00FFFF;
+  }
+  
+  .raspberry {
+    background-color: #FF007D;
+  }
+  
+  div {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 5px;
+  }
+</style>
+  
+<div class="orange"></div>
+<div class="cyan"></div>
+<div class="raspberry"></div>
+```
 
 [Voltar ao Índice](#indice)
 
