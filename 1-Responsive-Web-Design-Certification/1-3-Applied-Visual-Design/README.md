@@ -2004,7 +2004,58 @@ Create an animation for the element with the id rect, by setting the animation-n
 
 ## <a name="parte41">41 - Use CSS Animation to Change the Hover State of a Button</a>
 
+You can use CSS @keyframes to change the color of a button in its hover state.
 
+Here's an example of changing the width of an image on hover:
+
+```html
+    <style>
+      img:hover {
+        animation-name: width;
+        animation-duration: 500ms;
+      }
+    
+      @keyframes width {
+        100% {
+          width: 40px;
+        }
+      }
+    </style>
+    
+    <img src="https://bit.ly/smallgooglelogo" alt="Google's Logo" />
+
+```
+
+Note that ms stands for milliseconds, where 1000ms is equal to 1s.
+
+Use CSS @keyframes to change the background-color of the button element so it becomes #4791d0 when a user hovers over it. The @keyframes rule should only have an entry for 100%.
+
+```html
+<style>
+  button {
+    border-radius: 5px;
+    color: white;
+    background-color: #0F5897;
+    padding: 5px 10px 8px 10px;
+  }
+  
+  button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+  }
+  @keyframes background-color{
+    0% {
+      background-color: white;
+    }
+    100% {
+      background-color: #4791d0;
+    }
+  }
+  
+</style>
+  
+<button>Register</button>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -2013,7 +2064,40 @@ Create an animation for the element with the id rect, by setting the animation-n
 
 ## <a name="parte42">42 - Modify Fill Mode of an Animation</a>
 
+That's great, but it doesn't work right yet. Notice how the animation resets after 500ms has passed, causing the button to revert back to the original color. You want the button to stay highlighted.
 
+This can be done by setting the animation-fill-mode property to forwards. The animation-fill-mode specifies the style applied to an element when the animation has finished. You can set it like so:
+
+```css
+    animation-fill-mode: forwards;
+```
+
+
+Set the animation-fill-mode property of button:hover to forwards so the button stays highlighted when a user hovers over it.
+
+```html
+<style>
+  button {
+    border-radius: 5px;
+    color: white;
+    background-color: #0F5897;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    animation-name: background-color;
+    animation-duration: 500ms;
+    /* add your code below this line */
+    animation-fill-mode: forwards;
+    /* add your code above this line */
+  }
+  @keyframes background-color {
+    100% {
+      background-color: #4791d0;
+    }
+  }
+</style>
+<button>Register</button>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -2022,7 +2106,66 @@ Create an animation for the element with the id rect, by setting the animation-n
 
 ## <a name="parte43">43 - Create Movement Using CSS Animation</a>
 
+When elements have a specified position, such as fixed or relative, the CSS offset properties right, left, top, and bottom can be used in animation rules to create movement.
 
+As shown in the example below, you can push the item downwards then upwards by setting the top property of the 50% keyframe to 50px, but having it set to 0px for the first (0%) and the last (100%) keyframe.
+
+```css
+    @keyframes rainbow {
+      0% {
+        background-color: blue;
+        top: 0px;
+      }
+      50% {
+        background-color: green;
+        top: 50px;
+      }
+      100% {
+        background-color: yellow;
+        top: 0px;
+      }
+    }
+```
+
+Add a horizontal motion to the div animation. Using the left offset property, add to the @keyframes rule so rainbow starts at 0 pixels at 0%, moves to 25 pixels at 50%, and ends at -25 pixels at 100%. Don't replace the top property in the editor - the animation should have both vertical and horizontal motion.
+
+```html
+<style>
+  div {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+    position: relative;
+  }
+
+#rect {
+  animation-name: rainbow;
+  animation-duration: 4s;
+}
+
+@keyframes rainbow {
+  0% {
+    background-color: blue;
+    top: 0px;
+    left:0px;
+  }
+  50% {
+    background-color: green;
+    top: 50px;
+    left:25px;
+  }
+  100% {
+    background-color: yellow;
+    top: 0px;
+    left:-25px;
+  }
+}
+</style>
+
+<div id="rect"></div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -2031,7 +2174,45 @@ Create an animation for the element with the id rect, by setting the animation-n
 
 ## <a name="parte44">44 - Create Visual Direction by Fading an Element from Left to Right</a>
 
+For this challenge, you'll change the opacity of an animated element so it gradually fades as it reaches the right side of the screen.
 
+In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the @keyframes rule.
+
+
+Target the element with the id of ball and add the opacity property set to 0.1 at 50%, so the element fades as it moves to the right.
+
+```html
+
+<style>
+
+  #ball {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: fixed;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  @keyframes fade {
+    50% {
+      left: 60%;
+      opacity:0.1;
+    }
+  }
+
+</style>
+
+<div id="ball"></div>
+
+```
 
 [Voltar ao Índice](#indice)
 
