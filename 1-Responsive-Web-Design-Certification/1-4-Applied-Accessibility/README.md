@@ -466,7 +466,57 @@ Camper Cat is hard at work creating a stacked bar chart showing the amount of ti
 
 ## <a name="parte11">11 - Improve Form Field Accessibility with the label Element</a>
 
+Improving accessibility with semantic HTML markup applies to using both appropriate tag names as well as attributes. The next several challenges cover some important scenarios using attributes in forms.
 
+The label tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The for attribute on a label tag explicitly associates that label with the form control and is used by screen readers.
+
+You learned about radio buttons and their labels in a lesson in the Basic HTML section. In that lesson, we wrapped the radio button input element inside a label element along with the label text in order to make the text clickable. Another way to achieve this is by using the for attribute as explained in this lesson.
+
+The value of the for attribute must be the same as the value of the id attribute of the form control. Here's an example:
+
+```html
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+    </form>
+```
+
+Camper Cat expects a lot of interest in his thoughtful blog posts, and wants to include an email sign up form. Add a for attribute on the email label that matches the id on its input field.
+
+```html
+<body>
+  <header>
+    <h1>Deep Thoughts with Master Camper Cat</h1>
+  </header>
+  <section>
+    <form>
+      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      
+      
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email">
+      
+      
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </section>
+  <article>
+    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>
+    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>
+  </article>
+  <img src="samuraiSwords.jpeg" alt="">
+  <article>
+    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+  </article>
+  <img src="samuraiSwords.jpeg" alt="">
+  <article>
+    <h2>Is Chuck Norris a Cat Person?</h2>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+  </article>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -475,7 +525,78 @@ Camper Cat is hard at work creating a stacked bar chart showing the amount of ti
 
 ## <a name="parte12">12 - Wrap Radio Buttons in a fieldset Element for Better Accessibility</a>
 
+The next form topic covers accessibility of radio buttons. Each choice is given a label with a for attribute tying to the id of the corresponding item as covered in the last challenge. Since radio buttons often come in a group where the user must choose one, there's a way to semantically show the choices are part of a set.
 
+The fieldset tag surrounds the entire grouping of radio buttons to achieve this. It often uses a legend tag to provide a description for the grouping, which is read by screen readers for each choice in the fieldset element.
+
+The fieldset wrapper and legend tag are not necessary when the choices are self-explanatory, like a gender selection. Using a label with the for attribute for each radio button is sufficient.
+
+Here's an example:
+
+```html
+    <form>
+      <fieldset>
+        <legend>Choose one of these three items:</legend>
+        <input id="one" type="radio" name="items" value="one">
+        <label for="one">Choice One</label><br>
+        <input id="two" type="radio" name="items" value="two">
+        <label for="two">Choice Two</label><br>
+        <input id="three" type="radio" name="items" value="three">
+        <label for="three">Choice Three</label>
+      </fieldset>
+    </form>
+
+```
+
+Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons, and learned from our last lesson to use label tags with for attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the div tag surrounding the radio buttons to a fieldset tag, and change the p tag inside it to a legend.
+
+```html
+
+<body>
+  <header>
+    <h1>Deep Thoughts with Master Camper Cat</h1>
+  </header>
+  <section>
+    <form>
+      <p>Sign up to receive Camper Cat's blog posts by email here!</p>
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email">
+      
+      
+      <!-- Add your code below this line -->
+      <fieldset>
+        <legend>What level ninja are you?</legend>
+        <input id="newbie" type="radio" name="levels" value="newbie">
+        <label for="newbie">Newbie Kitten</label><br>
+        <input id="intermediate" type="radio" name="levels" value="intermediate">
+        <label for="intermediate">Developing Student</label><br>
+        <input id="master" type="radio" name="levels" value="master">
+        <label for="master">Master</label>
+      </fieldset>
+      <!-- Add your code above this line -->
+      
+      
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </section>
+  <article>
+    <h2>The Garfield Files: Lasagna as Training Fuel?</h2>
+    <p>The internet is littered with varying opinions on nutritional paradigms, from catnip paleo to hairball cleanses. But let's turn our attention to an often overlooked fitness fuel, and examine the protein-carb-NOM trifecta that is lasagna...</p>
+  </article>
+  <img src="samuraiSwords.jpeg" alt="">
+  <article>
+    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near...</p>
+  </article>
+  <img src="samuraiSwords.jpeg" alt="">
+  <article>
+    <h2>Is Chuck Norris a Cat Person?</h2>
+    <p>Chuck Norris is widely regarded as the premier martial artist on the planet, and it's a complete coincidence anyone who disagrees with this fact mysteriously disappears soon after. But the real question is, is he a cat person?...</p>
+  </article>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+
+```
 
 [Voltar ao Índice](#indice)
 
@@ -484,7 +605,48 @@ Camper Cat is hard at work creating a stacked bar chart showing the amount of ti
 
 ## <a name="parte13">13 - Add an Accessible Date Picker</a>
 
+Forms often include the input field, which can be used to create several different form controls. The type attribute on this element indicates what kind of input will be created.
 
+You may have noticed the text and submit input types in prior challenges, and HTML5 introduced an option to specify a date field. Depending on browser support, a date picker shows up in the input field when it's in focus, which makes filling in a form easier for all users.
+
+For older browsers, the type will default to text, so it helps to show users the expected date format in the label or as placeholder text just in case.
+
+Here's an example:
+
+```html
+    <label for="input1">Enter a date:</label>
+    <input type="date" id="input1" name="input1">
+```
+
+Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competitors to see what date works best. Add an input tag with a type attribute of "date", an id attribute of "pickdate", and a name attribute of "date".
+
+```html
+
+<body>
+  <header>
+    <h1>Tournaments</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Mortal Kombat Tournament Survey</h2>
+      <form>
+        <p>Tell us the best date for the competition</p>
+        <label for="pickdate">Preferred Date:</label>
+        
+        <!-- Add your code below this line -->
+        
+        <input id="pickdate" type="date" name="date" />
+        
+        <!-- Add your code above this line -->
+        
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </section>
+  </main>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+
+```
 
 [Voltar ao Índice](#indice)
 
@@ -493,7 +655,51 @@ Camper Cat is hard at work creating a stacked bar chart showing the amount of ti
 
 ## <a name="parte14">14 - Standardize Times with the HTML5 datetime Attribute</a>
 
+Continuing with the date theme, HTML5 also introduced the time element along with a datetime attribute to standardize times. This is an inline element that can wrap a date or time on a page. A valid format of that date is held by the datetime attribute. This is the value accessed by assistive devices. It helps avoid confusion by stating a standardized version of a time, even if it's written in an informal or colloquial manner in the text.
 
+Here's an example:
+
+```html
+    <p>Master Camper Cat officiated the cage match between Goro and Scorpion <time datetime="2013-02-13">last Wednesday</time>, which ended in a draw.</p>
+
+```
+
+
+Camper Cat's Mortal Kombat survey results are in! Wrap a time tag around the text "Thursday, September 15<sup>th</sup>" and add a datetime attribute to it set to "2016-09-15".
+
+```html
+<body>
+  <header>
+    <h1>Tournaments</h1>
+  </header>
+  <article>
+    <h2>Mortal Kombat Tournament Survey Results</h2>
+    
+    <!-- Add your code below this line -->
+    
+    <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is <time datetime="2016-09-15"> Thursday, September 15<sup>th</sup></time>. May the best ninja win!</p>
+    
+    <!-- Add your code above this line -->
+    
+    <section>
+      <h3>Comments:</h3>
+      <article>
+        <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
+        <p>Johnny Cage better be there, I'll finish him!</p>
+      </article>
+      <article>
+        <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>
+        <p>Wow, much combat, so mortal.</p>
+      </article>
+      <article>
+        <p>Posted by: The Grim Reaper on <time datetime="2016-08-16T00:00Z">August 16<sup>th</sup></time></p>
+        <p>Looks like I'll be busy that day.</p>
+      </article>
+    </section>
+  </article>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -502,7 +708,119 @@ Camper Cat is hard at work creating a stacked bar chart showing the amount of ti
 
 ## <a name="parte15">15 - Make Elements Only Visible to a Screen Reader by Using Custom CSS</a>
 
+Have you noticed that all of the applied accessibility challenges so far haven't used any CSS? This is to show the importance of a logical document outline, and using semantically meaningful tags around your content before introducing the visual design aspect.
 
+However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.
+
+Here's an example of the CSS rules that accomplish this:
+
+```css
+    .sr-only {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      top: auto;
+      overflow: hidden;
+    }
+```
+Note  
+The following CSS approaches will NOT do the same thing:
+
+
+- display: none; or visibility: hidden; hides content for everyone, including screen reader users
+
+- Zero values for pixel sizes, such as width: 0px; height: 0px; removes that element from the flow of your document, meaning screen readers will ignore it
+
+
+Camper Cat created a really cool stacked bar chart for his training page, and put the data into a table for his visually impaired users. The table already has an sr-only class, but the CSS rules aren't filled in yet. Give the position an absolute value, the left a -10000px value, and the width and height both 1px values.
+
+```html
+<head>
+  <style>
+  .sr-only {
+    position: absolute;
+    left: -10000px ;
+    width: 1px ;
+    height: 1px ;
+    top: auto;
+    overflow: hidden;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Training</h1>
+    <nav>
+      <ul>
+        <li><a href="#stealth">Stealth &amp; Agility</a></li>
+        <li><a href="#combat">Combat</a></li>
+        <li><a href="#weapons">Weapons</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+    <h2>Master Camper Cat's Beginner Three Week Training Program</h2>
+    <figure>
+      <!-- Stacked bar chart of weekly training-->
+      <p>[Stacked bar chart]</p>
+      <br />
+      <figcaption>Breakdown per week of time to spend training in stealth, combat, and weapons.</figcaption>
+    </figure>
+    <table class="sr-only">
+      <caption>Hours of Weekly Training in Stealth, Combat, and Weapons</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th scope="col">Stealth &amp; Agility</th>
+          <th scope="col">Combat</th>
+          <th scope="col">Weapons</th>
+          <th scope="col">Total</th>                                        
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Week One</th>
+          <td>3</td>
+          <td>5</td>
+          <td>2</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <th scope="row">Week Two</th>
+          <td>4</td>
+          <td>5</td>
+          <td>3</td>
+          <td>12</td>
+        </tr>
+        <tr>
+          <th scope="row">Week Three</th>
+          <td>4</td>
+          <td>6</td>
+          <td>3</td>
+          <td>13</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section id="stealth">
+    <h2>Stealth &amp; Agility Training</h2>
+    <article><h3>Climb foliage quickly using a minimum spanning tree approach</h3></article>
+    <article><h3>No training is NP-complete without parkour</h3></article>
+  </section>
+  <section id="combat">
+    <h2>Combat Training</h2>
+    <article><h3>Dispatch multiple enemies with multithreaded tactics</h3></article>
+    <article><h3>Goodbye, world: 5 proven ways to knock out an opponent</h3></article>
+  </section>
+  <section id="weapons">
+    <h2>Weapons Training</h2>
+    <article><h3>Swords: the best tool to literally divide and conquer</h3></article>
+    <article><h3>Breadth-first or depth-first in multi-weapon training?</h3></article>
+  </section>
+  <footer>&copy; 2018 Camper Cat</footer>
+</body>
+```
 
 [Voltar ao Índice](#indice)
 
