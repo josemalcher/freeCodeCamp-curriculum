@@ -98,7 +98,27 @@ Add style rules for the img tag to make it responsive to the size of its contain
 
 ## <a name="parte3">3 - Use a Retina Image for Higher Resolution Displays</a>
 
+The simplest way to make your images appear "retina" (and optimize them for retina displays) is to define their width and height values as only half of what the original file is.
 
+Here is an example of an image that is only using half of the original height and width:
+
+```html
+    <style>
+      img { height: 250px; width: 250px; }
+    </style>
+    <img src="coolPic500x500" alt="A most excellent picture">
+
+```
+
+Set the width and height of the img tag to half of their original values. In this case, both the original height and the original width are 200px.
+
+```html
+<style>
+  img { height: 100px; width: 100px; }
+</style>
+
+<img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
+```
 
 [Voltar ao Índice](#indice)
 
@@ -107,7 +127,32 @@ Add style rules for the img tag to make it responsive to the size of its contain
 
 ## <a name="parte4">4 - Make Typography Responsive</a>
 
+Instead of using em or px to size text, you can use viewport units for responsive typography. Viewport units, like percentages, are relative units, but they are based off different items. Viewport units are relative to the viewport dimensions (width or height) of a device, and percentages are relative to the size of the parent container element.
 
+The four different viewport units are:
+
+- vw: 10vw would be 10% of the viewport's width.
+- vh: 3vh would be 3% of the viewport's height.
+- vmin: 70vmin would be 70% of the viewport's smaller dimension (height vs. width).
+- vmax: 100vmax would be 100% of the viewport's bigger dimension (height vs. width).
+
+
+Set the width of the h2 tag to 80% of the viewport's width and the width of the paragraph as 75% of the viewport's smaller dimension.
+
+
+```html
+<style>
+  h2{
+      width:80vw;
+  }
+  p{
+      width:75vmin;
+  }
+</style>
+
+<h2>Importantus Ipsum</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+```
 
 [Voltar ao Índice](#indice)
 
