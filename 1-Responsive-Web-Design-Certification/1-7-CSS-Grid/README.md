@@ -578,7 +578,44 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte12">12 - Align All Items Horizontally using justify-items</a>
 
+Sometimes you want all the items in your CSS Grid to share the same alignment. You can use the previously learned properties and align them individually, or you can align them all at once horizontally by using justify-items on your grid container. This property can accept all the same values you learned about in the previous two challenges, the difference being that it will move all the items in our grid to the desired alignment.
 
+
+Use this property to center all our items horizontally.
+
+```html
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+  .item5{background:PaleGreen;}
+  
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /* add your code below this line */
+    
+    justify-items:center;
+    
+    /* add your code above this line */
+  }
+</style>
+  
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -587,7 +624,44 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte13">13 - Align All Items Vertically using align-items</a>
 
+Using the align-items property on a grid container will set the vertical alignment for all the items in our grid.
 
+
+Use it now to move all the items to the end of each cell.
+
+```html
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+  .item5{background:PaleGreen;}
+  
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /* add your code below this line */
+    
+    align-items:end;
+
+    /* add your code above this line */
+  }
+</style>
+  
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -596,7 +670,60 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte14">14 - Divide the Grid Into an Area Template</a>
 
+You can group cells of your grid together into an area and give the area a custom name. Do this by using grid-template-areas on the container like this:
 
+```
+grid-template-areas:
+  "header header header"
+  "advert content content"
+  "footer footer footer";
+```
+
+The code above merges the top three cells together into an area named header, the bottom three cells into a footer area, and it makes two areas in the middle row; advert and content.
+
+Note  
+Every word in the code represents a cell and every pair of quotation marks represent a row.
+
+In addition to custom labels, you can use a period (.) to designate an empty cell in the grid.
+
+
+Place the area template so that the cell labeled advert becomes an empty cell.
+
+```html
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+  .item5{background:PaleGreen;}
+  
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    /* change code below this line */
+    
+    grid-template-areas:
+      "header header header"
+      ". content content"
+      "footer footer footer";
+    /* change code above this line */
+  }
+</style>
+  
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -605,6 +732,56 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte15">15 - Place Items in Grid Areas Using the grid-area Property</a>
 
+After creating an areas template for your grid container, as shown in the previous challenge, you can place an item in your custom area by referencing the name you gave it. To do this, you use the grid-area property on an item like this:
+
+```css
+    .item1 { grid-area: header; }
+```
+This lets the grid know that you want the item1 class to go in the area named header. In this case, the item will use the entire top row because that whole row is named as the header area.
+
+
+Place an element with the item5 class in the footer area using the grid-area property.
+
+```html
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+  
+  .item5 {
+    background: PaleGreen;
+    /* add your code below this line */
+    
+    grid-area: footer;
+    
+    /* add your code above this line */
+  }
+  
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas: 
+      "header header header"
+      "advert content content"
+      "footer footer footer";
+  }
+</style>
+  
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+```
 
 
 [Voltar ao Índice](#indice)
@@ -614,7 +791,58 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte16">16 - Use grid-area Without Creating an Areas Template</a>
 
+The grid-area property you learned in the last challenge can be used in another way. If your grid doesn't have an areas template to reference, you can create an area on the fly for an item to be placed like this:
 
+```css
+    item1 { grid-area: 1/1/2/4; }
+```
+
+This is using the line numbers you learned about earlier to define where the area for this item will be. The numbers in the example above represent these values:
+
+```css
+    grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+```
+So the item in the example will consume the rows between lines 1 and 2, and the columns between lines 1 and 4.
+
+
+Using the grid-area property, place the element with item5 class between the third and fourth horizontal lines and between the first and fourth vertical lines.
+
+```html
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+  
+  .item5 {
+    background: PaleGreen;
+    /* add your code below this line */
+    
+    grid-area:3/1/4/4;
+    
+    /* add your code above this line */
+  }
+  
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+</style>
+  
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -623,7 +851,65 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte17">17 - Reduce Repetition Using the repeat Function</a>
 
+When you used grid-template-columns and grid-template-rows to define the structure of a grid, you entered a value for each row or column you created.
 
+Lets say you want a grid with 100 rows of the same height. It isn't very practical to insert 100 values individually. Fortunately, there's a better way - by using the repeat function to specify the number of times you want your column or row to be repeated, followed by a comma and the value you want to repeat.
+
+Here's an example that would create the 100 row grid, each row at 50px tall.
+
+```css
+    grid-template-rows: repeat(100, 50px);
+```
+You can also repeat multiple values with the repeat function, and insert the function amongst other values when defining a grid structure. Here's what I mean:
+
+```css
+    grid-template-columns: repeat(2, 1fr 50px) 20px;
+```
+
+This translates to:
+
+```css
+    grid-template-columns: 1fr 50px 1fr 50px 20px;
+```
+
+Note  
+1fr 50px is repeated twice followed by 20px.
+
+
+Use repeat to remove repetition from the grid-template-columns property.
+
+```html
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+  .item5{background:PaleGreen;}
+  
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* change the code below this line */
+    
+    grid-template-columns: repeat(3,1fr);
+    
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+</style>
+  
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -632,7 +918,49 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte18">18 - Limit Item Size Using the minmax Function</a>
 
+There's another built-in function to use with grid-template-columns and grid-template-rows called minmax. It's used to limit the size of items when the grid container changes size. To do this you need to specify the acceptable size range for your item. Here is an example:
 
+```css
+    grid-template-columns: 100px minmax(50px, 200px);
+```
+
+In the code above, grid-template-columns is set to create two columns; the first is 100px wide, and the second has the minimum width of 50px and the maximum width of 200px.
+
+
+Using the minmax function, replace the 1fr in the repeat function with a column size that has the minimum width of 90px and the maximum width of 1fr, and resize the preview panel to see the effect.
+
+```html
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+  .item5{background:PaleGreen;}
+  
+  .container {
+    font-size: 40px;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* change the code below this line */
+    
+    grid-template-columns: repeat(3, minmax(90px,1fr));
+    
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+</style>
+  
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -641,7 +969,72 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte19">19 - Create Flexible Layouts Using auto-fill</a>
 
+The repeat function comes with an option called auto-fill. This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create flexible layouts when combining auto-fill with minmax.
 
+In the preview, grid-template-columns is set to
+
+```css
+    repeat(auto-fill, minmax(60px, 1fr));
+
+```
+
+When the container changes size, this setup keeps inserting 60px columns and stretching them until it can insert another one.
+
+Note  
+If your container can't fit all your items on one row, it will move them down to a new one.
+
+
+In the first grid, use auto-fill with repeat to fill the grid with columns that have a minimum width of 60px and maximum of 1fr. Then resize the preview to see auto-fill in action.
+
+```html
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+  .item5{background:PaleGreen;}
+  
+  .container {
+    font-size: 40px;
+    min-height: 100px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    /* change the code below this line */
+    
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+  
+  .container2 {
+    font-size: 40px;
+    min-height: 100px;
+    width: 100%;
+    background: Silver;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(60px, 1fr));
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+</style>
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+<div class="container2">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -650,7 +1043,64 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte20">20 - Create Flexible Layouts Using auto-fit</a>
 
+auto-fit works almost identically to auto-fill. The only difference is that when the container's size exceeds the size of all the items combined, auto-fill keeps inserting empty rows or columns and pushes your items to the side, while auto-fit collapses those empty rows or columns and stretches your items to fit the size of the container.
 
+Note  
+If your container can't fit all your items on one row, it will move them down to a new one.
+
+
+In the second grid, use auto-fit with repeat to fill the grid with columns that have a minimum width of 60px and maximum of 1fr. Then resize the preview to see the difference.
+
+```html
+<style>
+  .item1{background:LightSkyBlue;}
+  .item2{background:LightSalmon;}
+  .item3{background:PaleTurquoise;}
+  .item4{background:LightPink;}
+  .item5{background:PaleGreen;}
+  
+  .container {
+    font-size: 40px;
+    min-height: 100px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: repeat( auto-fill, minmax(60px, 1fr));
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+  
+  .container2 {
+    font-size: 40px;
+    min-height: 100px;
+    width: 100%;
+    background: Silver;
+    display: grid;
+    /* change the code below this line */
+    
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    
+    /* change the code above this line */
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+</style>
+  
+<div class="container">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+<div class="container2">
+  <div class="item1">1</div>
+  <div class="item2">2</div>
+  <div class="item3">3</div>
+  <div class="item4">4</div>
+  <div class="item5">5</div>
+</div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -659,7 +1109,83 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte21">21 - Use Media Queries to Create Responsive Layouts</a>
 
+CSS Grid can be an easy way to make your site more responsive by using media queries to rearrange grid areas, change dimensions of a grid, and rearrange the placement of items.
 
+In the preview, when the viewport width is 300px or more, the number of columns changes from 1 to 2. The advertisement area then occupies the left column completely.
+
+
+When the viewport width is 400px or more, make the header area occupy the top row completely and the footer area occupy the bottom row completely.
+
+```html
+<style>
+  .item1 {
+    background: LightSkyBlue;
+    grid-area: header;
+  }
+  
+  .item2 {
+    background: LightSalmon;
+    grid-area: advert;
+  }
+  
+  .item3 {
+    background: PaleTurquoise;
+    grid-area: content;
+  }
+  
+  .item4 {
+    background: lightpink;
+    grid-area: footer;
+  }
+  
+  .container {
+    font-size: 1.5em;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 1fr auto;
+    grid-gap: 10px;
+    grid-template-areas:
+      "header"
+      "advert"
+      "content"
+      "footer";
+  }
+  
+  @media (min-width: 300px){
+    .container{
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto 1fr auto;
+      grid-template-areas:
+        "advert header"
+        "advert content"
+        "advert footer";
+    }
+  }
+  
+  @media (min-width: 400px){
+    .container{
+      /* change the code below this line */
+    
+      grid-template-areas:
+        "header header"
+        "advert content"
+        "footer footer";
+    
+    /* change the code above this line */
+    }
+  }
+</style>
+  
+<div class="container">
+  <div class="item1">header</div>
+  <div class="item2">advert</div>
+  <div class="item3">content</div>
+  <div class="item4">footer</div>
+</div>
+```
 
 [Voltar ao Índice](#indice)
 
@@ -668,7 +1194,75 @@ Align the item with the class item3 vertically at the end.
 
 ## <a name="parte22">22 - Create Grids within Grids</a>
 
+Turning an element into a grid only affects the behavior of its direct descendants. So by turning a direct descendant into a grid, you have a grid within a grid.
 
+For example, by setting the display and grid-template-columns properties of the element with the item3 class, you create a grid within your grid.
+
+
+Turn the element with the item3 class into a grid with two columns with a width of auto and 1fr using display and grid-template-columns.
+
+```html
+<style>
+  .container {
+    font-size: 1.5em;
+    min-height: 300px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 10px;
+    grid-template-areas:
+      "advert header"
+      "advert content"
+      "advert footer";
+  }
+  .item1 {
+    background: LightSkyBlue;
+    grid-area: header;
+  }
+  
+  .item2 {
+    background: LightSalmon;
+    grid-area: advert;
+  }
+  
+  .item3 {
+    background: PaleTurquoise;
+    grid-area: content;
+    /* enter your code below this line */
+    
+    display:grid;
+    grid-template-columns:auto 1fr;
+    
+    /* enter your code above this line */
+  }
+  
+  .item4 {
+    background: lightpink;
+    grid-area: footer;
+  }
+  
+  .itemOne {
+    background: PaleGreen;
+  }
+  
+  .itemTwo {
+    background: BlanchedAlmond;
+  }
+  
+</style>
+  
+<div class="container">
+  <div class="item1">header</div>
+  <div class="item2">advert</div>
+  <div class="item3">
+    <div class="itemOne">paragraph1</div>
+    <div class="itemTwo">paragraph2</div>
+  </div>
+  <div class="item4">footer</div>
+</div>
+```
 
 [Voltar ao Índice](#indice)
 
