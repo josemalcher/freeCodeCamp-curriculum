@@ -44,6 +44,8 @@ By the end of this, you would have 5 responsive websites under your belt that yo
 
 [Solution:](1-Build_a_Tribute_Page) 
 
+[codepen - freeCodeCamp - 1 - Build a Tribute Page](https://codepen.io/josemalcher/pen/ebqMEM)
+
 [Voltar ao Índice](#indice)
 
 ---
